@@ -1,0 +1,4 @@
+.idea/
+.mvn/
+spring-shell.log
+target/
