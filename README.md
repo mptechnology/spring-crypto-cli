@@ -38,7 +38,7 @@ db13bc5a9a7e919a4f95508ae2558b6c8c92b5e75a83bea4dd0d5802030ab064
 
 ### Decryption
 ```
-crypto-cli decrypt 6d3de18155ea5faa717ecd34e9443d3f73867664fc8977829c4382c4878fcf1c "test"
+crypto-cli decrypt "6d3de18155ea5faa717ecd34e9443d3f73867664fc8977829c4382c4878fcf1c" "test"
 ```
 returns:
 ```
