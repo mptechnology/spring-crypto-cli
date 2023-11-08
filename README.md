@@ -1,7 +1,10 @@
 # README
 Spring-Crypto-CLI is a replacement for spring-cloud-cli with its encryption and decryption functionalities which is no 
-longer supported with spring boot 3.*.  
-See https://github.com/spring-cloud/spring-cloud-cli/issues/180.
+longer supported with spring boot 3.*:      
+https://github.com/spring-cloud/spring-cloud-cli/issues/180  
+
+It uses the spring security crypto module to do the encryption as done by spring-cloud-cli:  
+https://docs.spring.io/spring-security/reference/features/integrations/cryptography.html
 
 ## Howto build and run
 ### Classic executable JAR
