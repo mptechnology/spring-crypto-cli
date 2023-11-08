@@ -19,8 +19,11 @@
     <properties>
         <java.version>17</java.version>
 
+        <!-- Dependencies -->
         <spring-shell.version>3.1.5</spring-shell.version>
+        <junit-jupiter.version>5.10.1</junit-jupiter.version>
 
+        <!-- Plugins -->
         <versions-maven-plugin.version>2.16.1</versions-maven-plugin.version>
     </properties>
 
@@ -37,6 +40,14 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-crypto</artifactId>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit-jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
