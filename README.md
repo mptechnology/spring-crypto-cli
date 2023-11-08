@@ -1,5 +1,6 @@
 # README
-Crypo-CLI is a replacement for spring-cloud-cli which is no longer supported with spring boot 3.*.  
+Spring-Crypto-CLI is a replacement for spring-cloud-cli with its encryption and decryption functionalities which is no 
+longer supported with spring boot 3.*.  
 See https://github.com/spring-cloud/spring-cloud-cli/issues/180.
 
 ## Howto build and run

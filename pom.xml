@@ -6,7 +6,8 @@
     <groupId>ch.mptechnology</groupId>
     <artifactId>spring-crypto-cli</artifactId>
     <version>1.0.1-SNAPSHOT</version>
-    <description>Crypto CLI</description>
+    <name>Spring Crypto CLI</name>
+    <description>CLI tool to encrypt/decrypt passwords using spring securities crypto module.</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
