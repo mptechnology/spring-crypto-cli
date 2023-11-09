@@ -6,15 +6,17 @@ https://github.com/spring-cloud/spring-cloud-cli/issues/180
 It uses the spring security crypto module to do the encryption as done by spring-cloud-cli:  
 https://docs.spring.io/spring-security/reference/features/integrations/cryptography.html
 
-## Howto build and run
-Build with:
+## How to build and run
+Build with:  
 ```mvn verify```    
-Run with:
+Run with:  
 ```java -jar ./target/spring-crypto-cli-1.1.0-SNAPSHOT-jar-with-dependencies.jar ```
 
-## Usage
-For simplicity, we recommend to register an alias like the following in your `~/.properties`:
+### Alias
+For simplicity, we recommend to register an alias like the following in your `~/.profile`:  
 `alias spring-crypto-cli='java -jar ./bin/spring-crypto-cli-1.1.0-SNAPSHOT-jar-with-dependencies.jar'`
+
+## Usage
 The examples below will use this alias.
 ### Encryption
 ```
