@@ -5,6 +5,7 @@ import org.springframework.security.crypto.encrypt.TextEncryptor;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
+import org.springframework.util.StringUtils;
 
 @ShellComponent
 public class Crypto {
@@ -17,6 +18,9 @@ public class Crypto {
             String message,
             @ShellOption String key,
             @ShellOption(defaultValue = HARD_CODED_SALT) String salt) {
+        validateArgument(message, "message");
+        validateArgument(key, "key");
+        validateArgument(salt, "salt");
         return createTextEncryptor(key, salt).encrypt(message);
     }
 
@@ -25,11 +29,21 @@ public class Crypto {
             String message,
             @ShellOption String key,
             @ShellOption(defaultValue = HARD_CODED_SALT) String salt) {
+        validateArgument(message, "message");
+        validateArgument(key, "key");
+        validateArgument(salt, "salt");
         return createTextEncryptor(key, salt).decrypt(message);
     }
 
     private static TextEncryptor createTextEncryptor(String key, String salt) {
         return Encryptors.text(key, salt);
+    }
+
+    private static void validateArgument(String message, String argumentName) {
+        if (!StringUtils.hasText(message)) {
+            System.err.println("Argument '" + argumentName + "' is missing!");
+            System.exit(1);
+        }
     }
 
 }
