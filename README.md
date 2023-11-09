@@ -7,33 +7,18 @@ It uses the spring security crypto module to do the encryption as done by spring
 https://docs.spring.io/spring-security/reference/features/integrations/cryptography.html
 
 ## Howto build and run
-### Classic executable JAR
 Build with:
 ```mvn verify```    
 Run with:
-```java -jar ./target/spring-crypto-cli-0.0.1-SNAPSHOT.jar```
-
-### Native Executable
-⚠️ Requires existing GraalVM installation. ⚠️  
-Build with:
-```mvn -Pnative native:compile```  
-Run with: 
-`./target/spring-crypto-cli`
+```java -jar ./target/spring-crypto-cli-1.1.0-SNAPSHOT-jar-with-dependencies.jar ```
 
 ## Usage
-The above 'run with' command was replace with `spring-crypto-cli` below.
-### Interactive
-To open the spring-crypto-cli interactive shell run:  
-```spring-crypto-cli```  
-Use `help` for usage information.
-
+For simplicity, we recommend to register an alias like the following in your `~/.properties`:
+`alias spring-crypto-cli='java -jar ./bin/spring-crypto-cli-1.1.0-SNAPSHOT-jar-with-dependencies.jar'`
+The examples below will use this alias.
 ### Encryption
 ```
 spring-crypto-cli encrypt --message "Hello" --key "test"
-```
-or just:
-```
-spring-crypto-cli encrypt "Hello" "test"
 ```
 returns something like:
 ```
@@ -42,7 +27,7 @@ db13bc5a9a7e919a4f95508ae2558b6c8c92b5e75a83bea4dd0d5802030ab064
 
 ### Decryption
 ```
-spring-crypto-cli decrypt "6d3de18155ea5faa717ecd34e9443d3f73867664fc8977829c4382c4878fcf1c" "test"
+spring-crypto-cli decrypt --message "6d3de18155ea5faa717ecd34e9443d3f73867664fc8977829c4382c4878fcf1c" --key "test"
 ```
 returns:
 ```
