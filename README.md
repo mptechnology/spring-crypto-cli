@@ -10,11 +10,15 @@ https://docs.spring.io/spring-security/reference/features/integrations/cryptogra
 Build with:  
 ```mvn verify```    
 Run with:  
-```java -jar ./target/spring-crypto-cli-1.1.0-SNAPSHOT-jar-with-dependencies.jar ```
+```
+java -jar ./target/spring-crypto-cli-1.1.0-jar-with-dependencies.jar 
+```
 
 ### Alias
 For simplicity, we recommend to register an alias like the following in your `~/.profile`:  
-`alias spring-crypto-cli='java -jar ./bin/spring-crypto-cli-1.1.0-SNAPSHOT-jar-with-dependencies.jar'`
+```
+alias spring-crypto-cli='java -jar ./bin/spring-crypto-cli-1.1.0-jar-with-dependencies.jar'
+```
 
 ## Usage
 The examples below will use this alias.
