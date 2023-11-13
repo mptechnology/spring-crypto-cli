@@ -63,3 +63,6 @@ my.secret.property={cipher}db13bc5a9a7e919a4f95508ae2558b6c8c92b5e75a83bea4dd0d5
 If you then start your application and provide it at runtime an `encrypt.key` property, containing your encryption key, 
 then the application will decrypt the values before startup. 
 Just make sure not to store your encryption key within the git project.
+
+## License
+spring-crypto-cli is released under the Apache 2.0 license.
