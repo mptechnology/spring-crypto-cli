@@ -1,4 +1,4 @@
-# README
+# Spring-Crypto-CLI
 Spring-Crypto-CLI is a replacement for spring-cloud-cli with its encryption and decryption functionalities which is no 
 longer supported with spring boot 3.*:      
 https://github.com/spring-cloud/spring-cloud-cli/issues/180  
@@ -35,3 +35,27 @@ returns:
 ```
 Hello
 ```
+
+## Usage in spring projects
+If you include the following maven dependency:
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter</artifactId>
+    <version>${spring-cloud.version}</version>
+    <scope>runtime</scope>
+</dependency>
+```
+or gradle dependency:
+```
+runtimeOnly 'org.springframework.cloud:spring-cloud-starter:${spring-cloud.version}'
+```
+
+You can then use the encrypted values in your `application.properties`:
+```
+my.secret.property={cipher}db13bc5a9a7e919a4f95508ae2558b6c8c92b5e75a83bea4dd0d5802030ab064
+```
+
+If you then start your application and provide it at runtime an `encrypt.key` property, containing your encryption key, 
+then the application will decrypt the values before startup. 
+Just make sure not to store your encryption key within the git project.
