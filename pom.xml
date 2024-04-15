@@ -19,14 +19,14 @@
 
         <!-- Dependencies -->
         <jcommander.version>1.83</jcommander.version>
-        <spring-security-crypto.version>6.1.4</spring-security-crypto.version>
-        <junit-jupiter.version>5.10.1</junit-jupiter.version>
+        <spring-security-crypto.version>6.1.8</spring-security-crypto.version>
+        <junit-jupiter.version>5.10.2</junit-jupiter.version>
 
         <!-- Plugins -->
-        <versions-maven-plugin.version>2.16.1</versions-maven-plugin.version>
+        <versions-maven-plugin.version>2.16.2</versions-maven-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
-        <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.2.5</maven-surefire-plugin.version>
     </properties>
 
     <dependencies>
