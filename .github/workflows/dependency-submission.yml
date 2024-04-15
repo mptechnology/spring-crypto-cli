@@ -1,0 +1,38 @@
+name: Dependency Submission
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: [ '**/pom.xml' ]
+jobs:
+  dependency-submission:
+    name: Dependency Submission
+    runs-on:
+      group: mp-default
+      labels: [ self-hosted, Linux, X64 ]
+    env:
+      MAVEN_OPTS: -Xmx1g
+    concurrency:
+      group: '${{ github.workflow }}: ${{ github.ref }}'
+      cancel-in-progress: true
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+      - name: Java Setup
+        id: java-setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          # cache: 'maven' takes too long
+          overwrite-settings: 'false'
+      - name: Info
+        id: info
+        run: |
+          java -version
+          ./mvnw -version
+          echo "MAVEN_OPTS: $MAVEN_OPTS"
+      - name: Dependency Submission
+        id: dependency-submission
+        uses: advanced-security/maven-dependency-submission-action@v4
