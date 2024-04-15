@@ -7,11 +7,7 @@ on:
 jobs:
   dependency-submission:
     name: Dependency Submission
-    runs-on:
-      group: mp-default
-      labels: [ self-hosted, Linux, X64 ]
-    env:
-      MAVEN_OPTS: -Xmx1g
+    runs-on: ubuntu-latest
     concurrency:
       group: '${{ github.workflow }}: ${{ github.ref }}'
       cancel-in-progress: true
