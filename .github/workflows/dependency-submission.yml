@@ -1,19 +1,19 @@
 name: Dependency Submission
+
 on:
   workflow_dispatch:
   push:
     branches: [ main ]
     paths: [ '**/pom.xml', '.github/workflows/dependency-submission.yml' ]
+
 concurrency:
   group: '${{ github.workflow }}: ${{ github.ref }}'
   cancel-in-progress: true
+
 jobs:
   dependency-submission:
     name: Dependency Submission
     runs-on: ubuntu-latest
-    concurrency:
-      group: '${{ github.workflow }}: ${{ github.ref }}'
-      cancel-in-progress: true
     steps:
       - name: Checkout
         id: checkout
