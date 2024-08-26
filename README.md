@@ -8,7 +8,7 @@ https://docs.spring.io/spring-security/reference/features/integrations/cryptogra
 
 ## How to build and run
 Build with:  
-```./mvnw verify```    
+```./mvnw clean verify```    
 Run with:  
 ```
 java -jar ./target/spring-crypto-cli-1.1.0-jar-with-dependencies.jar 
