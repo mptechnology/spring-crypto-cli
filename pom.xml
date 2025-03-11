@@ -29,6 +29,7 @@
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
+        <maven-scm-plugin.version>2.1.0</maven-scm-plugin.version>
     </properties>
 
     <dependencies>
@@ -95,8 +96,41 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <plugin>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>${maven-scm-plugin.version}</version>
+                <configuration>
+                    <tag>${project.version}</tag>
+                    <username>git</username>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <organization>
+        <name>mp technology AG</name>
+        <url>http://www.mptechnology.ch</url>
+    </organization>
+
+    <scm>
+        <connection>scm:git:ssh://github.com/mptechnology/spring-crypto-cli.git</connection>
+        <url>https://github.com/mptechnology/spring-crypto-cli.git</url>
+    </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>mp-releases-util</id>
+            <name>MP Nexus</name>
+            <url>https://build-artifacts.mptechnology.ch/repository/maven-releases-util/</url>
+        </repository>
+        <snapshotRepository>
+            <id>mp-snapshots</id>
+            <name>MP Nexus</name>
+            <url>https://build-artifacts.mptechnology.ch/repository/maven-snapshots/</url>
+            <uniqueVersion>false</uniqueVersion>
+        </snapshotRepository>
+    </distributionManagement>
 
     <licenses>
         <license>
