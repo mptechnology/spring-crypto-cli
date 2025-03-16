@@ -22,7 +22,7 @@
         <!-- Dependencies -->
         <jcommander.version>2.0</jcommander.version>
         <spring-security-crypto.version>6.4.3</spring-security-crypto.version>
-        <junit-jupiter.version>5.12.0</junit-jupiter.version>
+        <junit-jupiter.version>5.12.1</junit-jupiter.version>
 
         <!-- Plugins -->
         <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
