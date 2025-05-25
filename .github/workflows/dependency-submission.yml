@@ -34,4 +34,4 @@ jobs:
           echo "MAVEN_OPTS: $MAVEN_OPTS"
       - name: Dependency Submission
         id: dependency-submission
-        uses: advanced-security/maven-dependency-submission-action@v4
+        uses: advanced-security/maven-dependency-submission-action@v5
