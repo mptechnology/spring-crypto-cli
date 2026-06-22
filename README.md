@@ -6,20 +6,6 @@ https://github.com/spring-cloud/spring-cloud-cli/issues/180
 It uses the spring security crypto module to do the encryption as done by spring-cloud-cli:  
 https://docs.spring.io/spring-security/reference/features/integrations/cryptography.html
 
-## How to build and run
-Build with:  
-```./mvnw clean verify```    
-Run with:  
-```
-java -jar ./target/spring-crypto-cli-1.2.0-jar-with-dependencies.jar 
-```
-
-### Alias
-For simplicity, we recommend to register an alias like the following in your `~/.profile`:  
-```
-alias spring-crypto-cli='java -jar ./bin/spring-crypto-cli-1.2.0-jar-with-dependencies.jar'
-```
-
 ## Usage
 The examples below will use this alias.
 ### Encryption
@@ -63,6 +49,29 @@ my.secret.property={cipher}db13bc5a9a7e919a4f95508ae2558b6c8c92b5e75a83bea4dd0d5
 If you then start your application and provide it at runtime an `encrypt.key` property, containing your encryption key, 
 then the application will decrypt the values before startup. 
 Just make sure not to store your encryption key within the git project.
+
+
+## How to build and run
+Build with:  
+```./mvnw clean verify```    
+Run with:
+```
+java -jar ./target/spring-crypto-cli-1.3.0-jar-with-dependencies.jar 
+```
+
+### Alias
+For simplicity, we recommend to register an alias like the following in your `~/.profile`:
+```
+alias spring-crypto-cli='java -jar ./bin/spring-crypto-cli-1.3.0-jar-with-dependencies.jar'
+```
+
+## How to release
+Tag the commit with e.g. `1.3.0`
+
+Build with:  
+```./mvnw clean verify --D revision=1.3.0```
+
+Upload `target/spring-crypto-cli-1.3.0-jar-with-dependencies.jar` to GitHub releases.
 
 ## License
 spring-crypto-cli is released under the Apache 2.0 license.
