@@ -2,6 +2,7 @@ package ch.mptechnology.crypto;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import com.beust.jcommander.ParameterException;
 import com.beust.jcommander.Parameters;
 import org.springframework.security.crypto.encrypt.Encryptors;
 import org.springframework.security.crypto.encrypt.TextEncryptor;
@@ -41,14 +42,33 @@ public class CryptoCli {
                 .addCommand("decrypt", decrypt)
                 .build();
 
-        jc.parse(args);
+        try {
+            jc.parse(args);
+        } catch (ParameterException pe) {
+            System.err.println("Error: " + pe.getMessage() + "\n");
+            printUsageAndExit(jc);
+        }
 
         if (jc.getParsedCommand() == null) {
             printUsageAndExit(jc);
         }
         switch (jc.getParsedCommand()) {
-            case "encrypt" -> System.out.println(createTextEncryptor(encrypt.key, encrypt.salt).encrypt(encrypt.message));
-            case "decrypt" -> System.out.println(createTextEncryptor(decrypt.key, decrypt.salt).decrypt(decrypt.message));
+            case "encrypt" -> {
+                try {
+                    TextEncryptor encryptor = createTextEncryptor(encrypt.key, encrypt.salt);
+                    System.out.println(encryptor.encrypt(encrypt.message));
+                } catch (Exception e) {
+                    System.err.println("Failed to encrypt message: " + e.getMessage());
+                }
+            }
+            case "decrypt" -> {
+                try {
+                    TextEncryptor encryptor = createTextEncryptor(decrypt.key, decrypt.salt);
+                    System.out.println(encryptor.decrypt(decrypt.message));
+                } catch (Exception e) {
+                    System.err.println("Failed to decrypt cypher: " + e.getMessage());
+                }
+            }
             default -> {
                 System.err.println("Invalid command specified!");
                 printUsageAndExit(jc);
