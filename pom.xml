@@ -20,16 +20,15 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- Dependencies -->
-        <jcommander.version>2.0</jcommander.version>
-        <spring-security-crypto.version>6.4.13</spring-security-crypto.version>
-        <junit-jupiter.version>5.12.2</junit-jupiter.version>
+        <jcommander.version>3.0</jcommander.version>
+        <spring-security-crypto.version>7.1.0</spring-security-crypto.version>
+        <junit-jupiter.version>6.1.0</junit-jupiter.version>
 
         <!-- Plugins -->
-        <versions-maven-plugin.version>2.18.0</versions-maven-plugin.version>
-        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
-        <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
-        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
-        <maven-scm-plugin.version>2.1.0</maven-scm-plugin.version>
+        <versions-maven-plugin.version>2.21.0</versions-maven-plugin.version>
+        <maven-assembly-plugin.version>3.8.0</maven-assembly-plugin.version>
+        <maven-surefire-plugin.version>3.6.0-M1</maven-surefire-plugin.version>
+        <maven-scm-plugin.version>2.2.1</maven-scm-plugin.version>
     </properties>
 
     <dependencies>
