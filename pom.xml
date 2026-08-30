@@ -21,7 +21,7 @@
 
         <!-- Dependencies -->
         <jcommander.version>3.0</jcommander.version>
-        <spring-security-crypto.version>7.1.0</spring-security-crypto.version>
+        <spring-security-crypto.version>7.1.1</spring-security-crypto.version>
         <junit-jupiter.version>6.1.3</junit-jupiter.version>
 
         <!-- Plugins -->
